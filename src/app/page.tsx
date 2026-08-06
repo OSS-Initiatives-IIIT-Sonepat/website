@@ -104,14 +104,14 @@ export default function Home() {
                   alt="OSS Initiatives logo"
                   className="size-9 block dark:hidden"
                   height={36}
-                  src="/oss-initiatives-logo.png"
+                  src="/oss-initiatives-logo-dark.png"
                   width={36}
                 />
                 <Image
                   alt="OSS Initiatives logo"
                   className="size-9 hidden dark:block"
                   height={36}
-                  src="/oss-initiatives-logo-dark.png"
+                  src="/oss-initiatives-logo.png"
                   width={36}
                 />
               </span>
@@ -156,9 +156,16 @@ export default function Home() {
             <div className="absolute left-6 top-6 flex items-center gap-3 sm:left-10 sm:top-10">
               <Image
                 alt="OSS Initiatives logo"
-                className="size-12"
+                className="size-12 block dark:hidden"
                 height={48}
                 src="/oss-initiatives-logo-dark.png"
+                width={48}
+              />
+              <Image
+                alt="OSS Initiatives logo"
+                className="size-12 hidden dark:block"
+                height={48}
+                src="/oss-initiatives-logo.png"
                 width={48}
               />
               <h1 className="max-w-[14rem] text-2xl font-bold leading-none text-[#fafafa] drop-shadow">
@@ -293,14 +300,14 @@ export default function Home() {
                   alt="OSS Initiatives logo"
                   className="size-10 block dark:hidden"
                   height={40}
-                  src="/oss-initiatives-logo.png"
+                  src="/oss-initiatives-logo-dark.png"
                   width={40}
                 />
                 <Image
                   alt="OSS Initiatives logo"
                   className="size-10 hidden dark:block"
                   height={40}
-                  src="/oss-initiatives-logo-dark.png"
+                  src="/oss-initiatives-logo.png"
                   width={40}
                 />
                 <span className="text-sm font-bold uppercase tracking-tight">
