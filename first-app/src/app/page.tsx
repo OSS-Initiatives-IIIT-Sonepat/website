@@ -9,20 +9,14 @@ const projectCards = [
   {
     name: "tiny-vercel",
     detail: "In Progress",
-    color: "group-hover:text-[#fafafa]",
-    status: "in-progress",
   },
   {
     name: "excalidraw-animate",
     detail: "In Progress",
-    color: "group-hover:text-[#fafafa]",
-    status: "in-progress",
   },
   {
     name: "transformers-visualized",
     detail: "In Progress",
-    color: "group-hover:text-[#fafafa]",
-    status: "in-progress",
   },
 ];
 
@@ -68,15 +62,6 @@ const workflowCards = [
   },
 ];
 
-function StatusDot({ className }: { className: string }) {
-  return (
-    <span
-      aria-hidden="true"
-      className={`inline-block rounded-full bg-current ${className}`}
-    />
-  );
-}
-
 function SocialIcon({
   type,
   className,
@@ -116,15 +101,22 @@ export default function Home() {
             <Link className="flex items-center gap-3" href="/">
               <span className="grid size-9 place-items-center">
                 <Image
-                  alt="Compose logo"
-                  className="size-9 dark:invert"
+                  alt="OSS Initiatives logo"
+                  className="size-9 block dark:hidden"
                   height={36}
-                  src="/compose-logo.svg"
+                  src="/oss-initiatives-logo.png"
+                  width={36}
+                />
+                <Image
+                  alt="OSS Initiatives logo"
+                  className="size-9 hidden dark:block"
+                  height={36}
+                  src="/oss-initiatives-logo-dark.png"
                   width={36}
                 />
               </span>
               <span className="text-sm font-bold uppercase tracking-tight">
-                Compose
+                OSS Initiatives
               </span>
             </Link>
 
@@ -144,9 +136,9 @@ export default function Home() {
               <ThemeToggle />
               <a
                 className="border border-[#1b1b1b] bg-[#1b1b1b] px-4 py-2 text-sm font-bold text-[#fafafa] transition hover:bg-transparent hover:text-[#1b1b1b] dark:border-[#fafafa] dark:bg-[#fafafa] dark:text-[#1b1b1b] dark:hover:bg-transparent dark:hover:text-[#fafafa]"
-                href="#start"
+                href="https://github.com/OSS-Initiatives-IIIT-Sonepat"
               >
-                Start capturing
+                GitHub
               </a>
             </div>
           </nav>
@@ -163,45 +155,41 @@ export default function Home() {
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,250,250,0.34),rgba(250,250,250,0)_55%)] dark:bg-[linear-gradient(90deg,rgba(27,27,27,0.40),rgba(27,27,27,0)_55%)]" />
             <div className="absolute left-6 top-6 flex items-center gap-3 sm:left-10 sm:top-10">
               <Image
-                alt="Compose logo"
-                className="size-12 invert"
+                alt="OSS Initiatives logo"
+                className="size-12"
                 height={48}
-                src="/compose-logo.svg"
+                src="/oss-initiatives-logo-dark.png"
                 width={48}
               />
-              <h1 className="max-w-[12rem] text-2xl font-bold leading-none text-[#fafafa] drop-shadow">
-                Compose
+              <h1 className="max-w-[14rem] text-2xl font-bold leading-none text-[#fafafa] drop-shadow">
+                OSS Initiatives
               </h1>
             </div>
             <div className="absolute inset-x-6 bottom-6 grid gap-4 sm:bottom-10 sm:left-10 sm:right-10 lg:grid-cols-[minmax(18rem,34rem)_minmax(0,1fr)]">
               <div className="bg-[#fafafa] p-5 text-[#1b1b1b] shadow-[12px_12px_0_rgba(27,27,27,0.18)] sm:p-7">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1b1b1b]/52">
-                  Free, open-source dictation
+                  IIIT Sonepat — Student Led, Non Profit
                 </p>
                 <h2 className="mt-3 text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl">
-                  Your voice, already written.
+                  Software built for real people.
                 </h2>
               </div>
 
               <div
                 className="grid min-w-0 gap-3 sm:grid-cols-3 lg:self-end"
-                id="platforms"
+                id="projects"
               >
-                {platformCards.map((platform) => (
+                {projectCards.map((project) => (
                   <a
                     className="group min-w-0 border border-[#fafafa] bg-transparent p-3 text-[#fafafa] transition hover:bg-[#fafafa] hover:text-[#1b1b1b] sm:p-4"
-                    href="#platforms"
-                    key={platform.name}
+                    href="#projects"
+                    key={project.name}
                   >
-                    <PlatformIcon
-                      className={`size-8 text-[#fafafa] transition ${platform.color}`}
-                      type={platform.icon}
-                    />
                     <span className="mt-4 block text-base font-black leading-none sm:text-lg">
-                      {platform.name}
+                      {project.name}
                     </span>
                     <span className="mt-2 block text-xs leading-5 text-[#fafafa]/72 transition group-hover:text-[#1b1b1b]/62 sm:text-sm">
-                      {platform.detail}
+                      {project.detail}
                     </span>
                   </a>
                 ))}
@@ -212,31 +200,29 @@ export default function Home() {
           <div className="grid gap-4">
             <section
               className="grid gap-8 border border-[#1b1b1b]/15 bg-[#fafafa] p-5 dark:border-[#fafafa]/15 dark:bg-[#1b1b1b] sm:p-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-center"
-              id="capture"
+              id="about"
             >
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#1b1b1b]/46 dark:text-[#fafafa]/48">
-                  Speech to Text with lightning Speed
+                  Open Source Initiatives — IIIT Sonepat
                 </p>
                 <h3 className="mt-4 max-w-xl text-4xl font-black leading-none sm:text-5xl">
-                  Dictation that keeps up with real work.
+                  Libre software, built in the open.
                 </h3>
                 <p className="mt-5 max-w-2xl text-base leading-7 text-[#1b1b1b]/62 dark:text-[#fafafa]/62">
-                  Compose captures speech almost in real time, cleans up the
-                  rough edges, and places the result where you need it. It is
-                  free to use, open source, and made for notes, prompts, tasks,
-                  and thoughts that happen away from a perfect typing setup.
+                  We are a student-led, non-profit initiative at IIIT Sonepat.
+                  We build free, open source software for real people to use —
+                  and educational software for anyone to read, learn from, and
+                  build on. Everything we ship is libre, auditable, and yours.
                 </p>
               </div>
-
-              
             </section>
 
-            <section className="grid gap-4 md:grid-cols-3" id="details">
+            <section className="grid gap-4 md:grid-cols-3" id="projects-detail">
               {cards.map((card) => (
                 <article
                   className="group border border-[#1b1b1b]/15 bg-[#fafafa] p-3 dark:border-[#fafafa]/15 dark:bg-[#1b1b1b]"
-                  key={card.title}
+                  key={card.kicker}
                 >
                   <div className="flex min-h-[300px] flex-col">
                     <div className="relative aspect-[4/3] overflow-hidden bg-[#dedbd3] dark:bg-[#111111]">
@@ -304,33 +290,36 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-3">
                 <Image
-                  alt="Compose logo"
-                  className="size-10 dark:invert"
+                  alt="OSS Initiatives logo"
+                  className="size-10 block dark:hidden"
                   height={40}
-                  src="/compose-logo.svg"
+                  src="/oss-initiatives-logo.png"
+                  width={40}
+                />
+                <Image
+                  alt="OSS Initiatives logo"
+                  className="size-10 hidden dark:block"
+                  height={40}
+                  src="/oss-initiatives-logo-dark.png"
                   width={40}
                 />
                 <span className="text-sm font-bold uppercase tracking-tight">
-                  Compose
+                  OSS Initiatives — IIIT Sonepat
                 </span>
               </div>
               <p className="mt-5 max-w-xl text-2xl font-black leading-tight sm:text-4xl">
-                Free, open-source dictation for thoughts that need to land now.
+                Free, open source, non-profit software for real people and learners.
               </p>
             </div>
-            <div className="grid gap-3 lg:min-w-[28rem]">
+            <div className="grid gap-3 lg:min-w-[20rem]">
               <div className="grid gap-2 text-sm font-bold text-[#1b1b1b]/54 dark:text-[#fafafa]/58 sm:grid-cols-3">
-                {platformCards.map((platform) => (
+                {projectCards.map((project) => (
                   <a
                     className="group flex items-center gap-3 border border-[#1b1b1b]/12 p-3 transition hover:bg-[#1b1b1b] hover:text-[#fafafa] dark:border-[#fafafa]/12 dark:hover:bg-[#fafafa] dark:hover:text-[#1b1b1b]"
-                    href="#platforms"
-                    key={`footer-${platform.name}`}
+                    href="#projects"
+                    key={`footer-${project.name}`}
                   >
-                    <PlatformIcon
-                      className={`size-5 transition ${platform.color}`}
-                      type={platform.icon}
-                    />
-                    <span>{platform.name}</span>
+                    <span>{project.name}</span>
                   </a>
                 ))}
               </div>
@@ -340,7 +329,7 @@ export default function Home() {
                   { label: "LinkedIn", href: "#", icon: "linkedin" },
                   {
                     label: "GitHub",
-                    href: "https://github.com/FirePheonix/compose",
+                    href: "https://github.com/OSS-Initiatives-IIIT-Sonepat",
                     icon: "github",
                   },
                 ].map((social) => (
