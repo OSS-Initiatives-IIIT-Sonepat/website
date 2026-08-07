@@ -20,7 +20,8 @@ export function ThemeToggle() {
   }, []);
 
   function toggleTheme() {
-    const nextTheme = theme === "dark" ? "light" : "dark";
+    const currentTheme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
     applyTheme(nextTheme);
     setTheme(nextTheme);
   }
@@ -30,7 +31,7 @@ export function ThemeToggle() {
 
   return (
     <button
-      aria-label={`Switch to ${displayTheme === "dark" ? "light" : "dark"} mode`}
+      aria-label={mounted ? `Switch to ${theme === "dark" ? "light" : "dark"} mode` : "Toggle theme"}
       className="grid size-10 place-items-center border border-[#1b1b1b]/20 bg-[#fafafa] text-sm font-black text-[#1b1b1b] transition hover:bg-[#1b1b1b] hover:text-[#fafafa] dark:border-[#fafafa]/25 dark:bg-[#1b1b1b] dark:text-[#fafafa] dark:hover:bg-[#fafafa] dark:hover:text-[#1b1b1b]"
       onClick={toggleTheme}
       type="button"

@@ -30,11 +30,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(() => {
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`(() => {
   try {
     const saved = localStorage.getItem("theme");
     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -42,9 +39,8 @@ export default function RootLayout({
     document.documentElement.classList.toggle("dark", theme === "dark");
     document.documentElement.style.colorScheme = theme;
   } catch (_) {}
-})();`,
-          }}
-        />
+})();`}
+        </Script>
         {children}
       </body>
     </html>
