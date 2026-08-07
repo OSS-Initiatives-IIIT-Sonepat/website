@@ -31,12 +31,16 @@ export function ThemeToggle() {
 
   return (
     <button
-      aria-label={mounted ? `Switch to ${theme === "dark" ? "light" : "dark"} mode` : "Toggle theme"}
-      className="grid size-10 place-items-center border border-[#1b1b1b]/20 bg-[#fafafa] text-sm font-black text-[#1b1b1b] transition hover:bg-[#1b1b1b] hover:text-[#fafafa] dark:border-[#fafafa]/25 dark:bg-[#1b1b1b] dark:text-[#fafafa] dark:hover:bg-[#fafafa] dark:hover:text-[#1b1b1b]"
-      onClick={toggleTheme}
       type="button"
+      onClick={toggleTheme}
+      aria-label={
+        mounted
+          ? `Switch to ${displayTheme === "dark" ? "light" : "dark"} mode`
+          : "Toggle theme"
+      }
+      className="grid size-10 place-items-center rounded-full border border-[#1b1b1b]/20 bg-[#fafafa] text-lg text-[#1b1b1b] transition-all duration-200 hover:scale-105 hover:bg-[#1b1b1b] hover:text-[#fafafa] active:scale-95 dark:border-[#fafafa]/25 dark:bg-[#1b1b1b] dark:text-[#fafafa] dark:hover:bg-[#fafafa] dark:hover:text-[#1b1b1b]"
     >
-      {displayTheme === "dark" ? "L" : "D"}
+      {mounted ? (displayTheme === "dark" ? "☾" : "☀") : "☀"}
     </button>
   );
 }
