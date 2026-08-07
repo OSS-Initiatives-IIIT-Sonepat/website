@@ -351,48 +351,58 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground">
       <section className="mx-auto min-h-screen w-full max-w-[1440px] px-4 py-4 sm:px-6 lg:px-8">
         <header className="sticky top-4 z-30">
-          <nav className="flex min-h-16 w-full items-center justify-between border border-[#1b1b1b]/15 bg-[#fafafa]/92 px-4 shadow-[0_18px_50px_rgba(0,0,0,0.08)] backdrop-blur-xl dark:border-[#fafafa]/15 dark:bg-[#1b1b1b]/92 transition-all duration-300">
-            <div className="flex flex-1 items-center justify-start">
-              <Link className="flex items-center gap-3" href="/">
-                <span className="grid size-9 place-items-center shrink-0">
+          <nav className="sticky top-0 z-50 flex min-h-[72px] w-full items-center justify-between border-b border-[#1b1b1b]/10 bg-[#fafafa]/85 px-4 sm:px-6 backdrop-blur-xl transition-all duration-300 dark:border-[#fafafa]/10 dark:bg-[#111111]/85">
+            {/* Brand */}
+            <div className="flex flex-1 items-center">
+              <Link
+                href="/"
+                className="flex items-center gap-3 transition-opacity hover:opacity-80"
+              >
+                <span className="grid size-10 shrink-0 place-items-center">
                   <Image
-                    alt="OSS Initiatives logo"
-                    className="size-9 block dark:hidden"
-                    height={36}
                     src="/oss-initiatives-logo.png"
-                    width={36}
+                    alt="OSS Initiatives logo"
+                    width={40}
+                    height={40}
+                    className="block dark:hidden"
                   />
                   <Image
-                    alt="OSS Initiatives logo"
-                    className="size-9 hidden dark:block"
-                    height={36}
                     src="/oss-initiatives-logo-dark.png"
-                    width={36}
+                    alt="OSS Initiatives logo"
+                    width={40}
+                    height={40}
+                    className="hidden dark:block"
                   />
                 </span>
-                <span className="text-[13px] sm:text-sm font-bold uppercase tracking-tight whitespace-nowrap">
+
+                <span className="whitespace-nowrap text-sm font-semibold tracking-tight text-[#1b1b1b] dark:text-[#fafafa]">
                   OSS Initiatives
                 </span>
               </Link>
             </div>
 
-            <div className="hidden items-center justify-center gap-1 text-sm font-semibold md:flex">
+            {/* Desktop Navigation */}
+            <div className="hidden items-center justify-center gap-1 md:flex">
               {navLinks.map((item) => (
                 <a
-                  className="px-4 py-2 text-[#1b1b1b]/58 transition hover:bg-[#1b1b1b] hover:text-[#fafafa] dark:text-[#fafafa]/62 dark:hover:bg-[#fafafa] dark:hover:text-[#1b1b1b]"
-                  href={`#${item.toLowerCase()}`}
                   key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="rounded-full px-4 py-2 text-sm font-medium text-[#1b1b1b]/65 transition-all duration-200 hover:bg-[#1b1b1b]/8 hover:text-[#1b1b1b] dark:text-[#fafafa]/65 dark:hover:bg-[#fafafa]/10 dark:hover:text-[#fafafa]"
                 >
                   {item}
                 </a>
               ))}
             </div>
 
+            {/* Actions */}
             <div className="flex flex-1 items-center justify-end gap-2">
               <ThemeToggle />
+
               <a
-                className="hidden sm:inline-block border border-[#1b1b1b] bg-[#1b1b1b] px-4 py-2 text-sm font-bold text-[#fafafa] transition hover:bg-transparent hover:text-[#1b1b1b] dark:border-[#fafafa] dark:bg-[#fafafa] dark:text-[#1b1b1b] dark:hover:bg-transparent dark:hover:text-[#fafafa]"
                 href="https://github.com/OSS-Initiatives-IIIT-Sonepat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center rounded-full border border-[#1b1b1b] bg-[#1b1b1b] px-5 py-2 text-sm font-semibold text-[#fafafa] transition-all duration-200 hover:-translate-y-0.5 hover:bg-transparent hover:text-[#1b1b1b] hover:shadow-md dark:border-[#fafafa] dark:bg-[#fafafa] dark:text-[#1b1b1b] dark:hover:bg-transparent dark:hover:text-[#fafafa]"
               >
                 GitHub
               </a>
@@ -412,9 +422,16 @@ export default function Home() {
             <div className="absolute left-6 top-6 flex items-center gap-3 sm:left-10 sm:top-10">
               <Image
                 alt="OSS Initiatives logo"
-                className="size-12"
+                className="size-12 block dark:hidden"
                 height={48}
                 src="/oss-initiatives-logo-dark.png"
+                width={48}
+              />
+              <Image
+                alt="OSS Initiatives logo"
+                className="size-12 hidden dark:block"
+                height={48}
+                src="/oss-initiatives-logo.png"
                 width={48}
               />
               <h1 className="max-w-[14rem] text-2xl font-bold leading-none text-[#fafafa] drop-shadow">
@@ -581,14 +598,14 @@ export default function Home() {
                   alt="OSS Initiatives logo"
                   className="size-10 block dark:hidden"
                   height={40}
-                  src="/oss-initiatives-logo.png"
+                  src="/oss-initiatives-logo-dark.png"
                   width={40}
                 />
                 <Image
                   alt="OSS Initiatives logo"
                   className="size-10 hidden dark:block"
                   height={40}
-                  src="/oss-initiatives-logo-dark.png"
+                  src="/oss-initiatives-logo.png"
                   width={40}
                 />
                 <span className="text-sm font-bold uppercase tracking-tight">
